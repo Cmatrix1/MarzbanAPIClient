@@ -10,11 +10,9 @@ from models import (
 
 
 class MarzbanAPI:
-    def __init__(self, base_url: str, client_id: str, client_secret: str):
+    def __init__(self, base_url: str):
         self.base_url = base_url.rstrip("/")
         self.session = requests.Session()
-        self.client_id = client_id
-        self.client_secret = client_secret
         self.token = None
 
     def _send_request(self, method: str, url: str, **kwargs) -> Union[Dict[str, Any], List[Dict[str, Any]]]:
